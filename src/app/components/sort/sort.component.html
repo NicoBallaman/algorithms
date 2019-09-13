@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-content>
+        <h2 class="title">Algorithm sort</h2>
+        <div class="button-row">
+            <button mat-flat-button color="accent" (click)="mergeSort()">Merge Sort</button>
+            <button mat-flat-button color="accent" (click)="quikSort()">Quik Sort</button>
+            <button mat-flat-button color="accent" (click)="heapSort()">Heap Sort</button>
+            <button mat-flat-button color="accent" (click)="bubbleSort()">Bubble Sort</button>
+        </div>
+    </mat-card-content>
+    <button mat-stroked-button mat-icon-button aria-label="refresh" class="float-button" (click)="fillArray()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+</mat-card>
+<br>
+<mat-card>
+    <mat-card-content>
+        <div class="container">
+            <div class="column-grid">
+                <div *ngFor="let item of array">
+                    <div class="line" [ngStyle]="{'height': item.value + 'px'}" [ngClass]="(item.status == 2)?'line-active': ''"></div>
+                    <div style="height: 50px;width: 1px;float: left;"></div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

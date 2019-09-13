@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-content class="container">
+        <h1 class="title">String Permutation</h1>
+
+        <mat-form-field appearance="outline">
+            <input matInput disabled [(ngModel)]="str" class="big-input">
+            <button mat-icon-button matSuffix mat-stroked-button aria-label="search" style="background-color: #3f51b5; color: #fff;" (click)="getRandomString()">
+                    <mat-icon>refresh</mat-icon>
+                </button>
+        </mat-form-field>
+        <div>
+            <button class="big-button" mat-raised-button color="accent" (click)="startPermutation()">Start!</button>
+        </div>
+        <br>
+        <br>
+
+        <mat-grid-list cols="8" rowHeight="100px">
+            <mat-grid-tile *ngFor="let item of data" [colspan]="1" [rowspan]="1">
+                <mat-icon>spellcheck</mat-icon>&nbsp;&nbsp;{{item}}
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+
+</mat-card>

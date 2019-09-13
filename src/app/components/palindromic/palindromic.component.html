@@ -1,0 +1,78 @@
+<mat-card>
+    <mat-card-content class="container">
+        <h1 class="title">Longest Palindromic Subsequence
+            <button mat-fab [matMenuTriggerFor]="menu" class="icon-help"><mat-icon aria-hidden="false">help</mat-icon></button>
+        </h1>
+        <mat-menu #menu="matMenu">
+            <a mat-menu-item href="https://www.youtube.com/watch?v=yZWmS6CXbQc" target="_blank">
+                <mat-icon>play_arrow</mat-icon>
+                <span>Algorithm interview</span>
+            </a>
+            <a mat-menu-item href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3602881/" target="_blank">
+                <mat-icon>link</mat-icon>
+                <span>Find palindromes in nucleic acid sequences</span>
+            </a>
+        </mat-menu>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline">
+                    <input matInput disabled [(ngModel)]="str" class="big-input">
+                    <button mat-icon-button matSuffix mat-stroked-button aria-label="search" style="background-color: #3f51b5; color: #fff;" (click)="getRandomString()">
+                                <mat-icon>refresh</mat-icon>
+                            </button>
+                </mat-form-field>
+                <div>
+                    <button class="big-button" mat-raised-button color="accent" (click)="start()">Start!</button>
+                </div>
+            </div>
+            <div class="col-5" *ngIf="palindromic.length > 0">
+                <h2 class="title-result">Result:</h2>
+                <div class="big-letters">
+                    <span *ngFor="let letter of palindromic">{{ letter | uppercase}}</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div *ngIf="values.length" class="grid-values">
+            <mat-grid-list [cols]="str.length + 1">
+                <mat-grid-tile>
+                    <mat-card class="grid-values-card primary">
+                        <h2 class="text-center grid-values-card-value">&nbsp;</h2>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile *ngFor="let letter of str.split('')">
+                    <mat-card class="grid-values-card primary">
+                        <h2 class="text-center grid-values-card-value">
+                            {{letter | uppercase}}
+                        </h2>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+            <div *ngFor="let row of values">
+                <mat-grid-list [cols]="row.length + 1">
+                    <mat-grid-tile>
+                        <mat-card class="grid-values-card primary">
+                            <h2 class="text-center grid-values-card-value">
+                                {{row[0].yValue | uppercase}}
+                            </h2>
+                        </mat-card>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile *ngFor="let item of row">
+                        <mat-card class="grid-values-card" [ngClass]="item.status">
+                            <h2 class="text-center grid-values-card-value">
+                                {{item.value}}
+                            </h2>
+                            <p class="grid-values-card-position" [style.color]="item.xValue == item.yValue ? '#f44336': '#676767'">{{item.xValue | uppercase}} - {{item.yValue | uppercase}}</p>
+                        </mat-card>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+        </div>
+
+    </mat-card-content>
+
+</mat-card>

@@ -1,0 +1,26 @@
+.error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.error-page h1 {
+    font-size: 13vh;
+    font-weight: bold;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+}
+
+.error-page h1+p {
+    color: #d6d6d6;
+    font-size: 5vh;
+    font-weight: 100;
+    line-height: 7vh;
+    max-width: 600px;
+    position: relative;
+}
