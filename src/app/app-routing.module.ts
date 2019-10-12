@@ -4,7 +4,9 @@ import { SortComponent,
         SearchComponent,
         ParenthesisMatchingComponent,
         StringPermutationComponent,
-        PalindromicComponent } from './components/index.components';
+        PalindromicComponent, 
+        AnagramComponent,
+        SingleLinkedListComponent} from './components/index.components';
 
 const routes: Routes = [
     { path: '', component: SortComponent },
@@ -12,7 +14,9 @@ const routes: Routes = [
     { path: 'search', component: SearchComponent },
     { path: 'parenthesisMatching', component: ParenthesisMatchingComponent },
     { path: 'stringPermutation', component: StringPermutationComponent },
-    { path: 'palindromic', component: PalindromicComponent }
+    { path: 'palindromic', component: PalindromicComponent },
+    { path: 'anagram', component: AnagramComponent },
+    { path: 'singleLinkedList', component: SingleLinkedListComponent },
 ];
 
 @NgModule({

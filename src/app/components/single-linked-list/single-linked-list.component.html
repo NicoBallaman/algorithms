@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-content class="container">
+        <h1 class="title">Single Linked List</h1>
+
+        <div class="text-center">
+            <button class="big-button" mat-raised-button color="accent" (click)="start()">Start!</button>
+        </div>
+        <br>
+        <br>
+        <mat-grid-list class="text-center" cols="10">
+            <mat-grid-tile *ngFor="let node of linkedList" colspan="1" rowspan="1">
+                <span class="circle-item">{{node.value < 10 ? "0" + node.value: node.value}}</span>
+                <p class="item-link" [ngClass]="node.link.status">{{ node.value}} => {{node.link.value}}</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <br>
+        <br>
+
+    </mat-card-content>
+
+</mat-card>

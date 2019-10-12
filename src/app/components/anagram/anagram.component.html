@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-content class="container">
+        <h1 class="title">Anagram</h1>
+        <div class="container">
+            <div class="letters text-center">
+                <span *ngFor="let char of str1" class="item" [ngClass]="char.status">{{char.value}}</span>
+                <span class="item">&nbsp;=&nbsp;</span>
+                <span *ngFor="let char of str2" class="item" [ngClass]="char.status">{{char.value}}</span>
+            </div>
+            <h1 style="text-align: center;font-size: 56px;margin-bottom: 0px;">Match: {{lettersMatch}}</h1>
+            <h1 style="text-align: center;font-size: 56px;margin-bottom: 0px;">Don't match: {{lettersDontMatch}}</h1>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <button class="big-button" mat-raised-button color="accent" (click)="start()">Start!</button>
+            </div>
+        </div>
+
+    </mat-card-content>
+
+</mat-card>

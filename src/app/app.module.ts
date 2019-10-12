@@ -12,7 +12,8 @@ import { SearchComponent,
         StringPermutationComponent,
         PalindromicComponent } from './components/index.components';
 import { FormsModule } from '@angular/forms';
-import { DeviceDetectorModule } from 'ngx-device-detector';
+import { AnagramComponent } from './components/anagram/anagram.component';
+import { SingleLinkedListComponent } from './components/single-linked-list/single-linked-list.component';
 
 
 @NgModule({
@@ -23,15 +24,16 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
         SortComponent,
         ParenthesisMatchingComponent,
         StringPermutationComponent,
-        PalindromicComponent
+        PalindromicComponent,
+        AnagramComponent,
+        SingleLinkedListComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         FormsModule,
-        AngularMaterialModule,
-        DeviceDetectorModule.forRoot()
+        AngularMaterialModule
     ],
     entryComponents: [],
     providers: [],
